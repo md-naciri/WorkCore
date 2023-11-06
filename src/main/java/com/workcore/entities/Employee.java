@@ -8,7 +8,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private double Salary;
+    private double salary;
     @ManyToOne
     private Department department;
 
@@ -17,7 +17,7 @@ public class Employee {
 
     public Employee(String name, double salary, Department department) {
         this.name = name;
-        Salary = salary;
+        this.salary = salary;
         this.department = department;
     }
 
@@ -34,11 +34,11 @@ public class Employee {
     }
 
     public double getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(double salary) {
-        Salary = salary;
+        this.salary = salary;
     }
 
     public Department getDepartment() {
@@ -54,7 +54,7 @@ public class Employee {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", Salary=" + Salary +
+                ", Salary=" + salary +
                 ", department=" + department +
                 '}';
     }

@@ -23,6 +23,7 @@
             <props>
                 <prop key="hibernate.hbm2ddl.auto">${spring.jpa.hibernate.ddl-auto}</prop>
                 <prop key="hibernate.dialect">${spring.jooq.sql-dialect}</prop>
+                <prop key="hibernate.show_sql">${spring.jpa.show-sql}</prop>
             </props>
         </property>
     </bean>

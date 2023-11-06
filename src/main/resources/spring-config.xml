@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="jpa-config.xml"/>
+
+    <bean name="departmentBeen" class="com.workcore.entities.Department">
+        <property name="name" value="Math"/>
+    </bean>
+    <bean name="employeeBeen" class="com.workcore.entities.Employee">
+        <property name="name" value="Ahmed"/>
+        <property name="salary" value="15000"/>
+        <property name="department" ref="departmentBeen"/>
+    </bean>
+
+    <bean name="departmentService" class="com.workcore.services.DepartmentServiceImp">
+        <constructor-arg index="0" ref="departmentRepository"/>
+    </bean>
+    <bean name="employeeService" class="com.workcore.services.EmployeeServiceImp">
+        <constructor-arg index="0" ref="employeeRepository"/>
+    </bean>
+</beans>
