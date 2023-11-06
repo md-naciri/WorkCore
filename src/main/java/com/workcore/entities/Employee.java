@@ -12,6 +12,9 @@ public class Employee {
     @ManyToOne
     private Department department;
 
+    public Employee() {
+    }
+
     public Employee(String name, double salary, Department department) {
         this.name = name;
         Salary = salary;
